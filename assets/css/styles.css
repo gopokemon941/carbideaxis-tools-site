@@ -238,3 +238,26 @@ body{color:var(--ink);background:#fff}
     height:27px;
   }
 }
+
+/* perf: disable pulse animation on mobile to reduce paint cost */
+@media (max-width:960px){
+  .floating-wa{ animation:none !important; }
+}
+
+/* fix: btn-whatsapp and data-wa buttons — use <a> tag touch target sizing */
+.btn-whatsapp{
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  cursor:pointer;
+}
+/* ensure all inline WA anchor buttons have good tap targets on mobile */
+a.btn[href*="wa.me"]{
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  min-height:44px;
+}
+
+/* perf: lazy-load images don't shift layout */
+img[loading="lazy"]{
+  content-visibility:auto;
+}
