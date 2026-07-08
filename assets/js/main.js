@@ -1,5 +1,5 @@
 
-const WA_NUMBER='8618632930296';
+const WA_NUMBER='8617745168691';
 function openWhatsApp(message){
   const text=encodeURIComponent(message||'Hello CarbideAxis Tools, I would like to request a quotation.');
   window.open(`https://wa.me/${WA_NUMBER}?text=${text}`,'_blank');
