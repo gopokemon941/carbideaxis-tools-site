@@ -5,6 +5,19 @@ function openWhatsApp(message){
   window.open(`https://wa.me/${WA_NUMBER}?text=${text}`,'_blank');
 }
 document.addEventListener('DOMContentLoaded',()=>{
+  const mobileToggle=document.querySelector('.mobile-toggle');
+  const siteMenu=document.querySelector('.menu');
+  if(mobileToggle&&siteMenu){
+    mobileToggle.setAttribute('aria-expanded','false');
+    mobileToggle.addEventListener('click',()=>{
+      const isOpen=siteMenu.classList.toggle('is-open');
+      mobileToggle.setAttribute('aria-expanded',String(isOpen));
+    });
+    siteMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+      siteMenu.classList.remove('is-open');
+      mobileToggle.setAttribute('aria-expanded','false');
+    }));
+  }
   document.querySelectorAll('[data-wa]').forEach(btn=>btn.addEventListener('click',()=>openWhatsApp(btn.dataset.wa)));
   document.querySelectorAll('form[data-rfq]').forEach(form=>{
     form.addEventListener('submit',e=>{
