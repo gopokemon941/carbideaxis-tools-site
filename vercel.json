@@ -1,6 +1,16 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/apkt-vs-apmt.html", "destination": "/blog/apkt-vs-apmt", "permanent": true },
+    { "source": "/how-to-choose-end-mills-stainless-steel.html", "destination": "/blog/how-to-choose-end-mills-stainless-steel", "permanent": true },
+    { "source": "/why-carbide-inserts-chip-stainless-steel.html", "destination": "/blog/why-carbide-inserts-chip-stainless-steel", "permanent": true },
+    { "source": "/carbide-drill-coatings-tialn-altin-tin.html", "destination": "/blog/carbide-drill-coatings-tialn-altin-tin", "permanent": true },
+    { "source": "/buy-replacement-carbide-inserts-by-iso-code.html", "destination": "/blog/buy-replacement-carbide-inserts-by-iso-code", "permanent": true },
+    { "source": "/cnmg-vs-wnmg.html", "destination": "/blog/cnmg-vs-wnmg", "permanent": true },
+    { "source": "/pvd-vs-cvd-coating.html", "destination": "/blog/pvd-vs-cvd-coating", "permanent": true },
+    { "source": "/fast-carbide-tool-quotation.html", "destination": "/blog/fast-carbide-tool-quotation", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
