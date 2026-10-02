@@ -1,0 +1,28 @@
+CarbideAxis insert trial record
+
+Company / job reference:
+Trial date:
+Operator / contact:
+Workpiece material and hardness:
+Machine / holder / workholding / coolant:
+Operation and cut interruptions:
+
+Record separately for the existing tool and trial tool:
+Full insert code, grade, chipbreaker and batch:
+Cutting speed and unit:
+Feed and unit:
+Depth of cut and unit:
+Parts per usable edge:
+Number of edges evaluated:
+Acceptable parts and scrap:
+Surface finish target and measured result:
+Edge-failure mode / photographs:
+Cycle time and tool-change time:
+Insert price and usable edges per insert:
+
+Repeatable result / conditions changed / next step:
+
+Insert cost per acceptable part = insert price / (usable edges per insert x acceptable parts per edge).
+Include machine time, tool-change time and scrap in the full cost assessment.
+
+Send completed details to lunazhao520@gmail.com. Attach drawings or model lists to your email.

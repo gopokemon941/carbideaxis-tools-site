@@ -1,0 +1,21 @@
+CarbideAxis model list for quotation
+
+Company:
+Destination country:
+Contact:
+Packing: neutral / private label / please advise
+Required delivery date:
+
+Repeat the following for each model:
+Full insert code:
+Current grade and chipbreaker (if known):
+Holder / cutter body model:
+Workpiece material:
+Trial quantity:
+Expected repeat quantity and period:
+Packing / label requirement:
+
+MOQ, grade availability, price and delivery must be confirmed per model.
+Send this file or the completed details to WhatsApp +86 17745168691.
+
+Send completed details to lunazhao520@gmail.com. Attach drawings or model lists to your email.

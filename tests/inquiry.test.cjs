@@ -1,0 +1,61 @@
+const {readFileSync} = require('node:fs');
+const vm = require('node:vm');
+const assert = require('node:assert/strict');
+const source=readFileSync(require('node:path').join(__dirname,'../assets/js/main.js'),'utf8');
+function page(path,search,store,blocked=false) {
+  const events=[];
+  const context={URLSearchParams,URL,CustomEvent:class{constructor(type,options){this.type=type;this.detail=options.detail;}},
+    window:{location:{pathname:path,search},dispatchEvent:e=>events.push(e)},
+    sessionStorage:{getItem:k=>{if(blocked)throw Error('blocked');return store[k]||null;},setItem:(k,v)=>{if(blocked)throw Error('blocked');store[k]=v;}},
+    document:{addEventListener:()=>{}}};
+  vm.createContext(context);vm.runInContext(source,context);return {context,events};
+}
+const storage={};
+const first=page('/products/turning-inserts','?utm_source=google&utm_campaign=turning&email=private@example.com',storage);
+assert.match(first.context.getInquirySource(),/utm_source: google/);
+assert.ok(!JSON.stringify(storage).includes('private@example.com'));
+const contact=page('/contact','?intent=trial',storage);
+assert.match(contact.context.getInquirySource(),/Landing page: \/products\/turning-inserts/);
+assert.match(contact.context.getInquirySource(),/utm_campaign: turning/);
+assert.match(contact.context.getInquirySource(),/Source page: \/contact/);
+const text='CNMG120408, steel & cast iron; quantity 100';
+const url=new URL(contact.context.whatsappUrl(text));
+assert.equal(url.hostname,'wa.me');assert.equal(url.pathname,'/8617745168691');
+assert.ok(url.searchParams.get('text').startsWith(text));
+assert.equal((contact.context.withInquirySource(contact.context.withInquirySource(text)).match(/Source page:/g)||[]).length,1);
+contact.context.recordInteraction('rfq_whatsapp_draft',{intent:'trial'});
+assert.equal(contact.events[0].detail.name,'rfq_whatsapp_draft');
+assert.ok(!JSON.stringify(contact.events).includes('CNMG120408'));
+const unavailable=page('/contact','?utm_source=linkedin',{},true);
+assert.match(unavailable.context.getInquirySource(),/utm_source: linkedin/);
+const corrupt=page('/contact','',{'carbideaxis-visit-source':'bad json'});
+assert.match(corrupt.context.getInquirySource(),/Landing page: \/contact/);
+const makeData = values => ({get:key=>values[key] || null});
+const stock=contact.context.buildRfqMessage(makeData({intent:'distributor',name:'Buyer',product:'CNMG120408',country:'Germany',packing:'Private label packaging',repeat_quantity:'1000 / month',parameters:'stale trial data'}));
+assert.match(stock,/Sourcing purpose: Stock or private label supply/);
+assert.match(stock,/Destination country: Germany/);
+assert.match(stock,/Repeat quantity \/ period: 1000 \/ month/);
+assert.ok(!stock.includes('stale trial data'));
+const trial=contact.context.buildRfqMessage(makeData({intent:'trial',holder:'PCLNR 2525M12',current_grade:'label to confirm',hardness:'32 HRC',trial_goal:'Chip control',parameters:'180 m\/min; 0.2 mm\/rev; ap 2 mm',packing:'stale stock data'}));
+assert.match(trial,/Holder \/ cutter body: PCLNR 2525M12/);
+assert.match(trial,/Material hardness: 32 HRC/);
+assert.match(trial,/Trial goal: Chip control/);
+assert.ok(!trial.includes('stale stock data'));
+const custom=contact.context.buildRfqMessage(makeData({intent:'custom',country:'Italy',holder:'Custom holder',message:'See drawing'}));
+assert.match(custom,/Destination country: Italy/);assert.match(custom,/Holder \/ cutter body: Custom holder/);
+assert.match(custom,/Requirements: See drawing/);
+const emailSubject=contact.context.inquirySubject(makeData({product:'CNMG 120408 & PCD / 铝件\r\ntrial'}));
+assert.ok(!/[\r\n]/.test(emailSubject));
+const emailDraft=new URL(contact.context.emailUrl('100 pcs & drawing\nMaterial: 铝合金',emailSubject));
+assert.equal(emailDraft.protocol,'mailto:');
+assert.equal(emailDraft.pathname,'lunazhao520@gmail.com');
+assert.equal(emailDraft.searchParams.get('subject'),emailSubject);
+assert.match(emailDraft.searchParams.get('body'),/100 pcs & drawing\nMaterial: 铝合金/);
+assert.match(emailDraft.searchParams.get('body'),/Landing page: \/products\/turning-inserts/);
+assert.deepEqual([...emailDraft.searchParams.keys()],['subject','body']);
+const gmailDraft=new URL(contact.context.gmailUrl('RFQ\nAttach drawing',emailSubject));
+assert.equal(gmailDraft.origin,'https://mail.google.com');
+assert.equal(gmailDraft.searchParams.get('to'),'lunazhao520@gmail.com');
+assert.equal(gmailDraft.searchParams.get('su'),emailSubject);
+assert.match(gmailDraft.searchParams.get('body'),/RFQ\nAttach drawing/);
+console.log('PASS: email and Gmail recipients, Unicode/URL encoding, inquiry subject, attribution, storage fallback and stock/trial/custom RFQs; no false delivery event');
