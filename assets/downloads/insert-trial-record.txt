@@ -24,5 +24,3 @@ Repeatable result / conditions changed / next step:
 
 Insert cost per acceptable part = insert price / (usable edges per insert x acceptable parts per edge).
 Include machine time, tool-change time and scrap in the full cost assessment.
-
-Send completed details to lunazhao520@gmail.com. Attach drawings or model lists to your email.

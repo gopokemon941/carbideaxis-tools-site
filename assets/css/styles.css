@@ -56,6 +56,9 @@ body{color:var(--ink);background:#fff}
 .card p,.section-copy,td{color:#4f6680}
 .menu a.active:after,.menu a:hover:after{background:#ff6a13}
 .mini-link{color:#e85c0e}
+.product-inquiry-link{display:block;width:fit-content;margin-top:8px;color:#087c3d;font-size:14px;font-weight:750;line-height:1.35}
+.product-inquiry-link:hover{text-decoration:underline}
+.product-inquiry-link:focus-visible{outline:2px solid #087c3d;outline-offset:3px;border-radius:2px}
 .btn-primary{background:linear-gradient(135deg,#ff7a1f,#ff5c0a);color:#fff;box-shadow:0 14px 30px rgba(255,106,19,.24)}
 .btn-primary:hover{background:linear-gradient(135deg,#ff6a13,#e85c0e);transform:translateY(-1px)}
 .btn-dark{background:#071f36;color:#fff}
@@ -415,12 +418,3 @@ img{height:auto}
 .btn-secondary:hover{background:#eef4f9;border-color:#8aa4bc}
 .pill,.eyebrow,.topbar{font-size:.875rem}
 @media(max-width:620px){.topbar .container{font-size:.875rem}.rfq-details{padding:12px}}
-
-/* Email enquiries and readable fallback links. */
-.rfq-direct{grid-column:1/-1;margin:0;font-size:.875rem;overflow-wrap:anywhere}
-.rfq-direct a,.contact-email a{text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
-.rfq-help a{display:inline-block;max-width:100%;overflow-wrap:anywhere}
-.contact-email{overflow-wrap:anywhere}
-.hero-ctas .btn{white-space:normal;text-align:center;overflow-wrap:anywhere}
-.rfq-help,.rfq-direct{max-width:100%;min-width:0}
-@media(max-width:620px){form[data-rfq]>.btn{grid-column:1/-1;width:100%}.contact-page .hero-ctas{align-items:stretch}.contact-page .hero-ctas .btn{width:100%}}
