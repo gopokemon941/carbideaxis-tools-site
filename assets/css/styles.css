@@ -418,3 +418,5 @@ img{height:auto}
 .btn-secondary:hover{background:#eef4f9;border-color:#8aa4bc}
 .pill,.eyebrow,.topbar{font-size:.875rem}
 @media(max-width:620px){.topbar .container{font-size:.875rem}.rfq-details{padding:12px}}
+
+.article-figure{margin:0 0 34px}.article-figure img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:22px;box-shadow:var(--shadow)}.article-figure figcaption{font-size:13px;color:#6b7f92;margin-top:9px}.article a:not(.btn){color:#d6570d;text-decoration:underline;text-underline-offset:3px}.article ol{font-size:17px;color:#33485f;padding-left:26px}.article li{margin:8px 0}.article .table-wrap{margin:22px 0}.breadcrumbs a{color:inherit;text-decoration:underline;text-underline-offset:3px}.breadcrumbs a:hover,.breadcrumbs a:focus-visible{color:#fff}.rfq-copy{display:inline;width:max-content;min-height:0;margin:0;padding:0;border:0;background:none;box-shadow:none;color:#315d86;text-align:left;text-decoration:underline;text-underline-offset:3px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}.rfq-copy:hover{background:none;color:#0a324e}.rfq-copy[hidden]{display:none!important}

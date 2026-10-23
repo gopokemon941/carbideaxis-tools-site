@@ -99,6 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!started) { recordInteraction('rfq_start'); started = true; }
     });
     const copyButton = form.querySelector('[data-rfq-copy]');
+    const showCopyFallback = channel => {
+      if (!copyButton) return;
+      copyButton.hidden = false;
+      copyButton.textContent = `${channel} not opening? Copy your message`;
+    };
     if (copyButton) copyButton.addEventListener('click', async () => {
       if (!form.reportValidity()) return;
       const message = buildRfqMessage(new FormData(form));
@@ -128,6 +133,24 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', event => {
       event.preventDefault();
       const message = buildRfqMessage(new FormData(form));
+      const channel = event.submitter?.dataset.rfqChannel || 'whatsapp';
+      if (channel === 'email') {
+        const productName = String(new FormData(form).get('product') || '').trim();
+        const subject = productName ? `CarbideAxis inquiry: ${productName}` : 'CarbideAxis inquiry';
+        const emailUrl = `mailto:lunazhao520@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+        const help = form.querySelector('.rfq-help');
+        if (help) {
+          help.replaceChildren(document.createTextNode('Email draft prepared. Review it and press Send in your email app. If it did not open, use this link: '));
+          const retry = document.createElement('a');
+          retry.href = emailUrl;
+          retry.textContent = 'Open email draft';
+          help.appendChild(retry);
+        }
+        recordInteraction('rfq_email_draft', { intent: intent?.value || 'unspecified' });
+        showCopyFallback('Email');
+        window.location.href = emailUrl;
+        return;
+      }
       const url = whatsappUrl(message);
       const help = form.querySelector('.rfq-help');
       if (help) {
@@ -138,20 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
         retry.addEventListener('click', () => recordInteraction('whatsapp_click'));
         help.appendChild(retry);
       }
-      try {
-        let download = form.querySelector('[data-rfq-download]');
-        if (!download) {
-          download = document.createElement('a'); download.dataset.rfqDownload = '';
-          download.className = 'mini-link'; download.textContent = 'Save a copy of your request';
-          download.download = 'carbideaxis-rfq.txt'; form.appendChild(download);
-        }
-        if (download.dataset.objectUrl) URL.revokeObjectURL(download.dataset.objectUrl);
-        const objectUrl = URL.createObjectURL(new Blob([message], { type: 'text/plain;charset=utf-8' }));
-        download.href = objectUrl; download.dataset.objectUrl = objectUrl;
-      } catch (_) {
-        form.querySelector('[data-rfq-download]')?.remove();
-      }
       recordInteraction('rfq_whatsapp_draft', { intent: intent?.value || 'unspecified' });
+      showCopyFallback('WhatsApp');
       window.open(url, '_blank', 'noopener,noreferrer');
     });
   });
