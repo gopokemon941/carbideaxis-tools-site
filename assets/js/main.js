@@ -1,4 +1,29 @@
 const WA_NUMBER = '8617745168691';
+const PRODUCT_QUERY_LABELS = Object.freeze({
+  'turning-inserts': 'Turning Inserts',
+  'milling-inserts': 'Milling Inserts',
+  'threading-inserts': 'Threading Inserts',
+  'grooving-inserts': 'Grooving Inserts',
+  'carbide-end-mills': 'Carbide End Mills',
+  'pcd-inserts': 'PCD Inserts',
+  'cbn-inserts': 'CBN Inserts',
+  'cermet-inserts': 'Cermet Inserts',
+  'cnmg-turning-inserts': 'CNMG Turning Inserts',
+  'wnmg-turning-inserts': 'WNMG Turning Inserts',
+  'apkt-apmt-milling-inserts': 'APKT / APMT Milling Inserts',
+  'pcd-inserts-for-aluminum': 'PCD Inserts for Aluminum',
+  'cbn-inserts-for-hardened-steel': 'CBN Inserts for Hardened Steel',
+  'turning-inserts-oem': 'Turning Inserts',
+  'milling-inserts-cutters': 'Milling Inserts',
+  'threading-grooving-inserts': 'Threading and Grooving Inserts',
+  'pcd-cbn-inserts': 'PCD and CBN Inserts',
+  'carbide-end-mills-small-moq': 'Carbide End Mills',
+  'carbide-end-mills-rfq': 'Carbide End Mills',
+  'cbn-hardened-steel-rfq': 'CBN Inserts for Hardened Steel',
+  'cnmg-wnmg-turning-rfq': 'CNMG / WNMG Turning Inserts',
+  'oem-carbide-inserts-rfq': 'OEM Carbide Inserts',
+  'pcd-aluminum-rfq': 'PCD Inserts for Aluminum'
+});
 function whatsappUrl(message) {
   const text = (message || 'Hello CarbideAxis Tools, I would like to request a quotation.').trim();
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -79,6 +104,29 @@ document.addEventListener('DOMContentLoaded', () => {
     recordInteraction('whatsapp_click'); openWhatsApp(button.dataset.wa);
   }));
   const params = new URLSearchParams(window.location.search);
+  const productName = PRODUCT_QUERY_LABELS[params.get('product') || ''] || '';
+  const pageParts = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '').split('/').filter(Boolean);
+  const pageProductName = ['products', 'seo', 'landing', 'ads'].includes(pageParts[0])
+    ? PRODUCT_QUERY_LABELS[pageParts[1] || ''] || '' : '';
+  const intentName = {
+    distributor: 'a stock order or private label supply',
+    trial: 'a trial for a machining job',
+    custom: 'a custom tool project'
+  }[params.get('intent') || ''] || '';
+  document.querySelectorAll('[data-contact-whatsapp]').forEach(link => {
+    const topic = productName || intentName;
+    const message = topic
+      ? `Hello CarbideAxis Tools, I would like to ask about ${topic}. Can we chat?`
+      : 'Hello CarbideAxis Tools, I would like to discuss a carbide tooling project. Can we chat?';
+    link.href = whatsappUrl(message);
+    if (productName) link.setAttribute('aria-label', `Ask about ${productName} on WhatsApp`);
+  });
+  if (productName) {
+    const message = `Hello CarbideAxis Tools, I just viewed your ${productName} and would like to discuss a project. Can we chat?`;
+    document.querySelectorAll('.topbar a[href*="wa.me/"], .site-header .actions a[href*="wa.me/"], .footer a[href*="wa.me/"], .floating-wa').forEach(link => {
+      link.href = whatsappUrl(message);
+    });
+  }
   document.querySelectorAll('form[data-rfq]').forEach(form => {
     const intent = form.querySelector('[name="intent"]');
     if (intent && ['distributor', 'trial', 'custom'].includes(params.get('intent'))) intent.value = params.get('intent');
@@ -92,8 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (intent) intent.addEventListener('change', updatePurposeDetails);
     updatePurposeDetails();
     const product = form.querySelector('[name="product"]');
-    const productSlug = params.get('product');
-    if (product && productSlug && /^[a-z-]{1,60}$/.test(productSlug)) product.value = productSlug.replace(/-/g, ' ');
+    if (product && (productName || pageProductName) && !product.value.trim()) product.value = productName || pageProductName;
     let started = false;
     form.addEventListener('input', () => {
       if (!started) { recordInteraction('rfq_start'); started = true; }

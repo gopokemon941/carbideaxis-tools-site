@@ -81,6 +81,456 @@
       "source": "/fast-carbide-tool-quotation.html",
       "destination": "/blog/fast-carbide-tool-quotation",
       "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ads/carbide-end-mills-rfq/index",
+      "destination": "/ads/carbide-end-mills-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/ads/carbide-end-mills-rfq/index.html",
+      "destination": "/ads/carbide-end-mills-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/ads/cbn-hardened-steel-rfq/index",
+      "destination": "/ads/cbn-hardened-steel-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/ads/cbn-hardened-steel-rfq/index.html",
+      "destination": "/ads/cbn-hardened-steel-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/ads/cnmg-wnmg-turning-rfq/index",
+      "destination": "/ads/cnmg-wnmg-turning-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/ads/cnmg-wnmg-turning-rfq/index.html",
+      "destination": "/ads/cnmg-wnmg-turning-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/ads/oem-carbide-inserts-rfq/index",
+      "destination": "/ads/oem-carbide-inserts-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/ads/oem-carbide-inserts-rfq/index.html",
+      "destination": "/ads/oem-carbide-inserts-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/ads/pcd-aluminum-rfq/index",
+      "destination": "/ads/pcd-aluminum-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/ads/pcd-aluminum-rfq/index.html",
+      "destination": "/ads/pcd-aluminum-rfq",
+      "permanent": true
+    },
+    {
+      "source": "/applications/index",
+      "destination": "/applications",
+      "permanent": true
+    },
+    {
+      "source": "/applications/index.html",
+      "destination": "/applications",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/16er-vs-16ir-threading-inserts/index",
+      "destination": "/blog/16er-vs-16ir-threading-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/blog/16er-vs-16ir-threading-inserts/index.html",
+      "destination": "/blog/16er-vs-16ir-threading-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/blog/apkt-vs-apmt/index",
+      "destination": "/blog/apkt-vs-apmt",
+      "permanent": true
+    },
+    {
+      "source": "/blog/apkt-vs-apmt/index.html",
+      "destination": "/blog/apkt-vs-apmt",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buy-replacement-carbide-inserts-by-iso-code/index",
+      "destination": "/blog/buy-replacement-carbide-inserts-by-iso-code",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buy-replacement-carbide-inserts-by-iso-code/index.html",
+      "destination": "/blog/buy-replacement-carbide-inserts-by-iso-code",
+      "permanent": true
+    },
+    {
+      "source": "/blog/carbide-drill-coatings-tialn-altin-tin/index",
+      "destination": "/blog/carbide-drill-coatings-tialn-altin-tin",
+      "permanent": true
+    },
+    {
+      "source": "/blog/carbide-drill-coatings-tialn-altin-tin/index.html",
+      "destination": "/blog/carbide-drill-coatings-tialn-altin-tin",
+      "permanent": true
+    },
+    {
+      "source": "/blog/carbide-insert-grades-steel-stainless-cast-iron/index",
+      "destination": "/blog/carbide-insert-grades-steel-stainless-cast-iron",
+      "permanent": true
+    },
+    {
+      "source": "/blog/carbide-insert-grades-steel-stainless-cast-iron/index.html",
+      "destination": "/blog/carbide-insert-grades-steel-stainless-cast-iron",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cnmg-vs-wnmg/index",
+      "destination": "/blog/cnmg-vs-wnmg",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cnmg-vs-wnmg/index.html",
+      "destination": "/blog/cnmg-vs-wnmg",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fast-carbide-tool-quotation/index",
+      "destination": "/blog/fast-carbide-tool-quotation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fast-carbide-tool-quotation/index.html",
+      "destination": "/blog/fast-carbide-tool-quotation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-choose-end-mills-stainless-steel/index",
+      "destination": "/blog/how-to-choose-end-mills-stainless-steel",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-choose-end-mills-stainless-steel/index.html",
+      "destination": "/blog/how-to-choose-end-mills-stainless-steel",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mgmn-grooving-insert-width-holder-selection/index",
+      "destination": "/blog/mgmn-grooving-insert-width-holder-selection",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mgmn-grooving-insert-width-holder-selection/index.html",
+      "destination": "/blog/mgmn-grooving-insert-width-holder-selection",
+      "permanent": true
+    },
+    {
+      "source": "/blog/pvd-vs-cvd-coating/index",
+      "destination": "/blog/pvd-vs-cvd-coating",
+      "permanent": true
+    },
+    {
+      "source": "/blog/pvd-vs-cvd-coating/index.html",
+      "destination": "/blog/pvd-vs-cvd-coating",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-carbide-inserts-chip-stainless-steel/index",
+      "destination": "/blog/why-carbide-inserts-chip-stainless-steel",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-carbide-inserts-chip-stainless-steel/index.html",
+      "destination": "/blog/why-carbide-inserts-chip-stainless-steel",
+      "permanent": true
+    },
+    {
+      "source": "/contact/index",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact/index.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/distributor-supply/index",
+      "destination": "/distributor-supply",
+      "permanent": true
+    },
+    {
+      "source": "/distributor-supply/index.html",
+      "destination": "/distributor-supply",
+      "permanent": true
+    },
+    {
+      "source": "/factory/index",
+      "destination": "/factory",
+      "permanent": true
+    },
+    {
+      "source": "/factory/index.html",
+      "destination": "/factory",
+      "permanent": true
+    },
+    {
+      "source": "/insert-trial/index",
+      "destination": "/insert-trial",
+      "permanent": true
+    },
+    {
+      "source": "/insert-trial/index.html",
+      "destination": "/insert-trial",
+      "permanent": true
+    },
+    {
+      "source": "/landing/carbide-end-mills-small-moq/index",
+      "destination": "/landing/carbide-end-mills-small-moq",
+      "permanent": true
+    },
+    {
+      "source": "/landing/carbide-end-mills-small-moq/index.html",
+      "destination": "/landing/carbide-end-mills-small-moq",
+      "permanent": true
+    },
+    {
+      "source": "/landing/milling-inserts-cutters/index",
+      "destination": "/landing/milling-inserts-cutters",
+      "permanent": true
+    },
+    {
+      "source": "/landing/milling-inserts-cutters/index.html",
+      "destination": "/landing/milling-inserts-cutters",
+      "permanent": true
+    },
+    {
+      "source": "/landing/pcd-cbn-inserts/index",
+      "destination": "/landing/pcd-cbn-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/landing/pcd-cbn-inserts/index.html",
+      "destination": "/landing/pcd-cbn-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/landing/threading-grooving-inserts/index",
+      "destination": "/landing/threading-grooving-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/landing/threading-grooving-inserts/index.html",
+      "destination": "/landing/threading-grooving-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/landing/turning-inserts-oem/index",
+      "destination": "/landing/turning-inserts-oem",
+      "permanent": true
+    },
+    {
+      "source": "/landing/turning-inserts-oem/index.html",
+      "destination": "/landing/turning-inserts-oem",
+      "permanent": true
+    },
+    {
+      "source": "/products/index",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/index.html",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/carbide-end-mills/index",
+      "destination": "/products/carbide-end-mills",
+      "permanent": true
+    },
+    {
+      "source": "/products/carbide-end-mills/index.html",
+      "destination": "/products/carbide-end-mills",
+      "permanent": true
+    },
+    {
+      "source": "/products/cbn-inserts/index",
+      "destination": "/products/cbn-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/cbn-inserts/index.html",
+      "destination": "/products/cbn-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/cermet-inserts/index",
+      "destination": "/products/cermet-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/cermet-inserts/index.html",
+      "destination": "/products/cermet-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/grooving-inserts/index",
+      "destination": "/products/grooving-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/grooving-inserts/index.html",
+      "destination": "/products/grooving-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/milling-inserts/index",
+      "destination": "/products/milling-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/milling-inserts/index.html",
+      "destination": "/products/milling-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/pcd-inserts/index",
+      "destination": "/products/pcd-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/pcd-inserts/index.html",
+      "destination": "/products/pcd-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/threading-inserts/index",
+      "destination": "/products/threading-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/threading-inserts/index.html",
+      "destination": "/products/threading-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/turning-inserts/index",
+      "destination": "/products/turning-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/products/turning-inserts/index.html",
+      "destination": "/products/turning-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/quality-control/index",
+      "destination": "/quality-control",
+      "permanent": true
+    },
+    {
+      "source": "/quality-control/index.html",
+      "destination": "/quality-control",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/index",
+      "destination": "/reviews",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/index.html",
+      "destination": "/reviews",
+      "permanent": true
+    },
+    {
+      "source": "/seo/apkt-apmt-milling-inserts/index",
+      "destination": "/seo/apkt-apmt-milling-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/seo/apkt-apmt-milling-inserts/index.html",
+      "destination": "/seo/apkt-apmt-milling-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/seo/cbn-inserts-for-hardened-steel/index",
+      "destination": "/seo/cbn-inserts-for-hardened-steel",
+      "permanent": true
+    },
+    {
+      "source": "/seo/cbn-inserts-for-hardened-steel/index.html",
+      "destination": "/seo/cbn-inserts-for-hardened-steel",
+      "permanent": true
+    },
+    {
+      "source": "/seo/cnmg-turning-inserts/index",
+      "destination": "/seo/cnmg-turning-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/seo/cnmg-turning-inserts/index.html",
+      "destination": "/seo/cnmg-turning-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/seo/pcd-inserts-for-aluminum/index",
+      "destination": "/seo/pcd-inserts-for-aluminum",
+      "permanent": true
+    },
+    {
+      "source": "/seo/pcd-inserts-for-aluminum/index.html",
+      "destination": "/seo/pcd-inserts-for-aluminum",
+      "permanent": true
+    },
+    {
+      "source": "/seo/wnmg-turning-inserts/index",
+      "destination": "/seo/wnmg-turning-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/seo/wnmg-turning-inserts/index.html",
+      "destination": "/seo/wnmg-turning-inserts",
+      "permanent": true
+    },
+    {
+      "source": "/supply-range/index",
+      "destination": "/supply-range",
+      "permanent": true
+    },
+    {
+      "source": "/supply-range/index.html",
+      "destination": "/supply-range",
+      "permanent": true
     }
   ],
   "headers": [

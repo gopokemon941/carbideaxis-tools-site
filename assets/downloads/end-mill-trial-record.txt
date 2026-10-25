@@ -1,0 +1,28 @@
+CarbideAxis end mill trial record
+
+Company / job reference:
+Trial date and operator:
+Workpiece material and hardness:
+Machine, spindle, holder and workholding:
+Coolant / lubrication:
+Operation (slotting, profiling, roughing or finishing):
+Required tolerance and surface finish:
+
+Record separately for the current end mill and the trial end mill:
+Model / drawing reference and supplier batch:
+Diameter, flute count, flute length and overall length:
+Corner form, coating and tool overhang:
+Spindle speed and unit:
+Feed rate and unit:
+Axial and radial depth of cut and units:
+Cutting time or acceptable parts per tool:
+Chip evacuation, burrs and measured surface finish:
+Wear or failure mode / photographs:
+Cycle time, tool-change time and scrap:
+Tool price (if known):
+
+Conditions changed during trial:
+Repeatable result and next step:
+
+Compare tools under the same job conditions. Include machine time, tool changes
+and scrap when assessing cost per acceptable part.
