@@ -115,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     custom: 'a custom tool project'
   }[params.get('intent') || ''] || '';
   document.querySelectorAll('[data-contact-whatsapp]').forEach(link => {
+    link.hidden = false;
     const topic = productName || intentName;
     const message = topic
       ? `Hello CarbideAxis Tools, I would like to ask about ${topic}. Can we chat?`
