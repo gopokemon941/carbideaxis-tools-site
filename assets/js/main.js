@@ -65,6 +65,7 @@ function buildRfqMessage(data) {
   return ['Hello CarbideAxis Tools, I would like to request a quotation.', ...lines].join('\n');
 }
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('form[data-rfq][hidden]').forEach(form => { form.hidden = false; });
   const toggle = document.querySelector('.mobile-toggle');
   const menu = document.querySelector('.menu');
   if (toggle && menu) {
