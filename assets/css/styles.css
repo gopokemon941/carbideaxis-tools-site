@@ -550,3 +550,11 @@ img{height:auto}
 .rfq-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 [data-web-status]{overflow-wrap:anywhere}
 [data-web-status] a{display:inline-block;margin-right:12px;min-height:44px;line-height:44px}
+
+/* Batch 2026-11-03: hero video + insert identification entry */
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,21,38,.90) 0%,rgba(4,21,38,.62) 43%,rgba(4,21,38,.18) 100%);z-index:2;pointer-events:none}
+.hero .container{z-index:3}
+@media (prefers-reduced-motion: reduce){.hero-video{display:none}}
+.hero-id-entry{margin:16px 0 0;font-size:15px;color:#dcebf7}
+.hero-id-entry a{color:#ffb36d;font-weight:800;text-decoration:underline;text-underline-offset:3px}

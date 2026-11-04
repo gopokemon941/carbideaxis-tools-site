@@ -115,14 +115,26 @@
         (async () => {
           const response = await window.fetch(url, {
             method: 'POST', headers: {'Content-Type':'application/json', 'Accept':'application/json'},
-            body: JSON.stringify({ requestId: attempt.requestId, ...context(), fields, website: '' }),
+            body: JSON.stringify({
+              // Web3Forms adapter (2026-11-03): flat fields + public form access key.
+              // This access key is public by design (it ships in page source); it is not a password or mailbox credential.
+              access_key: '5f98e1fe-fd60-4ff1-a7fc-45be162c4e22',
+              subject: `New inquiry from CarbideAxis website${fields.product ? ` - ${fields.product}` : ''}`,
+              from_name: 'CarbideAxis Website',
+              ...fields,
+              ...((fields.email || (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(fields.contact || ''))) ? { email: fields.email || fields.contact } : {}),
+              source_page: context().page,
+              ...(context().product ? { source_product: context().product } : {}),
+              request_id: attempt.requestId,
+              botcheck: ''
+            }),
             credentials: 'omit', referrerPolicy: 'no-referrer', signal: controller.signal
           });
           if (!response.ok) throw new Error('receiver rejected');
           return response.json();
         })(), timeout
       ]);
-      if (result?.ok !== true) throw new Error('missing explicit acknowledgement');
+      if (!(result?.ok === true || result?.success === true)) throw new Error('missing explicit acknowledgement');
       attempt.accepted = true;
       status(form, (revisions.get(form) || 0) === submittedRevision
         ? 'Your request was accepted by our inquiry service. We will reply using the contact details you provided.'
