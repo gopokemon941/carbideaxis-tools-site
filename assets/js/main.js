@@ -26,7 +26,7 @@ const PRODUCT_QUERY_LABELS = Object.freeze({
 });
 window.CarbideAxisInquiry?.initializeProducts(PRODUCT_QUERY_LABELS);
 function whatsappUrl(message) {
-  const text = (message || 'Hello CarbideAxis Tools, I would like to request a quotation.').trim();
+  const text = (message || 'Hello CarbideAxis, I would like to request a quotation.').trim();
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 function inquiryEmailUrl(data, message) {
@@ -65,7 +65,7 @@ function buildRfqMessage(data) {
     return value ? `${label}: ${value}` : '';
   }).filter(Boolean);
   if (purposeNames[purpose]) lines.unshift(`Sourcing purpose: ${purposeNames[purpose]}`);
-  return ['Hello CarbideAxis Tools, I would like to request a quotation.', ...lines].join('\n');
+  return ['Hello CarbideAxis, I would like to request a quotation.', ...lines].join('\n');
 }
 document.addEventListener('DOMContentLoaded', () => {
   // Native details supports touch and keyboard without JavaScript.
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.product-card [data-product-inquiry]').forEach(link => {
     const product = link.closest('.product-card')?.querySelector('h3')?.textContent?.trim();
     if (!product) return;
-    const message = `Hello CarbideAxis Tools, I just viewed your ${product} and would like to discuss a project. Can we chat?`;
+    const message = `Hello CarbideAxis, I just viewed your ${product} and would like to discuss a project. Can we chat?`;
     link.href = whatsappUrl(message);
     link.setAttribute('aria-label', `Ask about ${product} on WhatsApp`);
   });
@@ -134,13 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-contact-whatsapp]').forEach(link => {
     const topic = productName || intentName;
     const message = topic
-      ? `Hello CarbideAxis Tools, I would like to ask about ${topic}. Can we chat?`
-      : 'Hello CarbideAxis Tools, I would like to discuss a carbide tooling project. Can we chat?';
+      ? `Hello CarbideAxis, I would like to ask about ${topic}. Can we chat?`
+      : 'Hello CarbideAxis, I would like to discuss a carbide tooling project. Can we chat?';
     link.href = whatsappUrl(message);
     if (productName) link.setAttribute('aria-label', `Ask about ${productName} on WhatsApp`);
   });
   if (productName) {
-    const message = `Hello CarbideAxis Tools, I just viewed your ${productName} and would like to discuss a project. Can we chat?`;
+    const message = `Hello CarbideAxis, I just viewed your ${productName} and would like to discuss a project. Can we chat?`;
     document.querySelectorAll('.topbar a[href*="wa.me/"], .site-header .actions a[href*="wa.me/"], .footer a[href*="wa.me/"], .floating-wa').forEach(link => {
       link.href = whatsappUrl(message);
     });
