@@ -558,3 +558,6 @@ img{height:auto}
 @media (prefers-reduced-motion: reduce){.hero-video{display:none}}
 .hero-id-entry{margin:16px 0 0;font-size:15px;color:#dcebf7}
 .hero-id-entry a{color:#ffb36d;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+
+.badge-grid a.badge{text-decoration:none}
+.badge-grid a.badge:hover{border-color:#12304d}
