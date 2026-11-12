@@ -72,6 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.nav-products').forEach(group => {
     const trigger = group.querySelector('summary');
     const panel = group.querySelector('.product-menu');
+    const productsLink = group.querySelector('.nav-products-link');
+    if (productsLink) {
+      // The Products label is a real link: a plain click/tap navigates to the
+      // product overview instead of toggling the menu. Modified clicks keep
+      // native behaviour; the rest of the summary (chevron) still toggles.
+      productsLink.addEventListener('click', event => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        window.location.assign(productsLink.href);
+      });
+    }
     const desktopHover = window.matchMedia('(min-width:961px) and (hover:hover) and (pointer:fine)');
     let closeTimer;
     const cancelClose = () => window.clearTimeout(closeTimer);

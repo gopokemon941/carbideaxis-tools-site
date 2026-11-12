@@ -561,3 +561,6 @@ img{height:auto}
 
 .badge-grid a.badge{text-decoration:none}
 .badge-grid a.badge:hover{border-color:#12304d}
+
+/* Batch 3: Products label inside the summary is a real link to /products. */
+.nav-products-link{color:inherit;text-decoration:none;display:inline-flex;align-items:center;align-self:stretch}
