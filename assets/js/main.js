@@ -9,6 +9,7 @@ const PRODUCT_QUERY_LABELS = Object.freeze({
   'cbn-inserts': 'CBN Inserts',
   'cermet-inserts': 'Cermet Inserts',
   'cnmg-turning-inserts': 'CNMG Turning Inserts',
+  'cnmg120408': 'CNMG120408',
   'wnmg-turning-inserts': 'WNMG Turning Inserts',
   'apkt-apmt-milling-inserts': 'APKT / APMT Milling Inserts',
   'pcd-inserts-for-aluminum': 'PCD Inserts for Aluminum',
