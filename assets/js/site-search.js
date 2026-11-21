@@ -6,7 +6,7 @@
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function load() {
     if (index || loading) return; loading = true;
-    fetch('/assets/search-index.json?v=20261121').then(function (r) { return r.json(); }).then(function (d) { index = d; render(); }).catch(function () { loading = false; });
+    fetch('/assets/search-index.json?v=20261122').then(function (r) { return r.json(); }).then(function (d) { index = d; render(); }).catch(function () { loading = false; });
   }
   function score(e, q, rawUpper) {
     var s = 0, i;
@@ -15,7 +15,9 @@
       else if (e.c[i].indexOf(q) === 0) s += 60;
       else if (e.c[i].indexOf(q) > -1) s += 30;
     }
-    if (e.t.toUpperCase().indexOf(q) > -1) s += 25;
+    var fam = q.slice(0, 4);
+  if (/^[A-Z]{4}[0-9]/.test(q) && e.t.toUpperCase().indexOf(fam) === 0) s += 50;
+  if (e.t.toUpperCase().indexOf(q) > -1) s += 25;
     if (e.h.toUpperCase().indexOf(q) > -1) s += 12;
     if (e.d.toUpperCase().indexOf(q) > -1) s += 6;
     if (s === 0 && rawUpper.length > 2) {
