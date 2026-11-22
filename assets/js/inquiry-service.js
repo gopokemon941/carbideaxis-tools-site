@@ -80,7 +80,9 @@
     const contact = String(data.get('contact') || data.get('email') || '').trim();
     if (!contact) {
       status(form, 'Add an email address or WhatsApp number so we can reply, or continue in WhatsApp.', true);
-      form.querySelector('[name="contact"], [name="email"]')?.focus(); return;
+      const contactField = form.querySelector('[name="contact"], [name="email"]');
+      if (contactField?.closest('details')) contactField.closest('details').open = true;
+      contactField?.focus(); return;
     }
     const fields = {};
     const allowed = ['intent','name','company','contact','email','product','quantity','material','message','country','packing','repeat_quantity','delivery','holder','current_grade','hardness','trial_goal','parameters'];
