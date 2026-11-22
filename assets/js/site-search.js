@@ -6,7 +6,7 @@
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function load() {
     if (index || loading) return; loading = true;
-    fetch('/assets/search-index.json?v=20261123').then(function (r) { return r.json(); }).then(function (d) { index = d; render(); }).catch(function () { loading = false; });
+    fetch('/assets/search-index.json?v=20261123-2').then(function (r) { return r.json(); }).then(function (d) { index = d; render(); }).catch(function () { loading = false; });
   }
   function score(e, q, rawUpper) {
     var s = 0, i;
